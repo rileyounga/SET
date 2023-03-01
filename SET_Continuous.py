@@ -13,6 +13,8 @@ def SET_capture():
     # default is 640x480 1.6125 wider, 1.0435 taller
     cv2.resizeWindow("SET", 640, 480)
     vc = cv2.VideoCapture(0)
+    vc.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+    vc.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 
     if vc.isOpened():  # try to get the first frame
         rval, frame = vc.read()
